@@ -6,13 +6,13 @@ import itertools
 def create_search():
     ntweets = input("Number of tweets to scrape: ")
     search = input("Enter search term: ")
-    location= input("Enter location leave blank for all location: ")
+    location= input("Enter location leave blank for all location: (countries only) ")
     if location == "":
         location = None
     else:
         search = search + " near:" + '"'+str(location)+'"'
-    datef= input("Enter from date leave blank for all: ")
-    datet= input("Enter to date leave blank for all: ")
+    datef= input("Enter from date leave blank for all: yyyy/mm/dd ")
+    datet= input("Enter to date leave blank for all: yyyy/mm/dd ")
 
     if datef != "" and datet != "":
         search = search + " since:"+datef+" until:"+datet
