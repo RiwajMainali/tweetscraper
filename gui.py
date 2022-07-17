@@ -1,11 +1,15 @@
 import dearpygui.dearpygui as dpg
-import dearpygui.demo as demo
 
-dpg.create_context()
-dpg.create_viewport(title='Custom Title', width=600, height=600)
+class GUI:
+    dpg.create_context()
+    dpg.create_viewport()
+    dpg.setup_dearpygui()
+    with dpg.window(label=""):
+        dpg.add_text("test")
+    dpg.show_viewport()
+    while dpg.is_dearpygui_running():
+        print("this will run every frame")
+        dpg.handle_events()
+        dpg.render_dearpygui_frame()
+    dpg.destroy_context()
 
-
-dpg.setup_dearpygui()
-dpg.show_viewport()
-dpg.start_dearpygui()
-dpg.destroy_context()
